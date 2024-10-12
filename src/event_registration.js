@@ -16,6 +16,7 @@ const EventRegistration = (props) => {
   const stateLocation = useLocation();
   const { eventId, name, date, description, location } = stateLocation.state || {};
 
+  //Lambda Function URL
   const photoUploadURL = 'https://wzsqukxjmexmxye2zey7fs7d6e0nzeny.lambda-url.us-east-1.on.aws/';
   const registrationURL = 'https://h4djbsk5sjsfkazoop2m6ydqji0guiuv.lambda-url.us-east-1.on.aws/';
 

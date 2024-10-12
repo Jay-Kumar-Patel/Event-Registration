@@ -3,10 +3,11 @@ import './upcoming-events.css';
 import { Link } from 'react-router-dom';
 
 const UpcomingEvents = () => {
-  const [upcomingEvents, setUpcomingEvents] = useState([]); // Default to empty array
+  const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  //Lambda Function URL
   const functionURL = 'https://qkb5pm7evvuwfjl2txtb5jsyw40nwqxi.lambda-url.us-east-1.on.aws/';
 
   const fetchEvents = async () => {
@@ -14,13 +15,13 @@ const UpcomingEvents = () => {
       const response = await fetch(functionURL);
       const data = await response.json();
 
-      console.log('API Response:', data); // Log the API response for debugging
+      console.log('API Response:', data);
 
       if (response.ok) {
         // Check if data.events is an object
         if (data.events && typeof data.events === 'object') {
           // Convert the object values to an array
-          setUpcomingEvents(Object.values(data.events)); // Convert object to array
+          setUpcomingEvents(Object.values(data.events));
         } else {
           setError('Invalid data format: Expected an object with events.');
         }
@@ -53,12 +54,12 @@ const UpcomingEvents = () => {
       <div className="events-list">
         {upcomingEvents.map((event) => (
           <Link
-            key={event.eventId} // Use eventId as the key
+            key={event.eventId}
             to="/event-registration"
             state={event}
             className="event-card"
           >
-            <h2 className="event-name">{event.title}</h2> {/* Updated to title */}
+            <h2 className="event-name">{event.title}</h2>
             <h3 className="event-date">{event.date}</h3>
             <p className="event-description">{event.description}</p>
           </Link>

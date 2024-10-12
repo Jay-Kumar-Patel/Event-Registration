@@ -10,7 +10,7 @@ const LoginForm = () => {
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
-  // Replace with your actual Lambda Function URL
+  //Login Lambda Function URL
   const functionURL = 'https://7ejcwm5a64gmpnju5acstkbury0bcrak.lambda-url.us-east-1.on.aws/'; 
 
   const handleSubmit = async (e) => {

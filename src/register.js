@@ -9,6 +9,7 @@ const RegisterForm = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
+  //Sign-up Lambda URL
   const functionURL = 'https://stixbwpkge5qzockhw5pwp7hhq0mynmm.lambda-url.us-east-1.on.aws/';
 
   const handleSubmit = async (e) => {
