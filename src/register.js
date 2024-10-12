@@ -7,9 +7,6 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
   const navigate = useNavigate();
 
   const functionURL = 'https://stixbwpkge5qzockhw5pwp7hhq0mynmm.lambda-url.us-east-1.on.aws/';
@@ -20,10 +17,6 @@ const RegisterForm = () => {
       alert("Passwords don't match!");
       return;
     }
-
-    setLoading(true);
-    setError('');
-    setSuccess('');
 
     const requestBody = {
       name: username,
@@ -40,19 +33,14 @@ const RegisterForm = () => {
         body: JSON.stringify(requestBody),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
-        setSuccess('User registered successfully!');
         navigate('/');
       } else {
-        setError(data.message || 'Something went wrong.');
+        alert('Something went wrong.')
       }
     } catch (error) {
-      setError('Failed to connect to the server.');
+      alert('Failed to connect to the server.')
       console.error('Error during registration:', error);
-    } finally {
-      setLoading(false);
     }
   };
 

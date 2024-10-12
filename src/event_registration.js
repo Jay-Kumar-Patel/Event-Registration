@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './event_registration.css';
 import { useLocation } from 'react-router-dom';
 
