@@ -10,7 +10,7 @@ const RegisterForm = () => {
   const navigate = useNavigate();
 
   //Sign-up Lambda URL
-  const functionURL = 'https://stixbwpkge5qzockhw5pwp7hhq0mynmm.lambda-url.us-east-1.on.aws/';
+  const functionURL = 'https://us-central1-serverless-441520.cloudfunctions.net/login_signup';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

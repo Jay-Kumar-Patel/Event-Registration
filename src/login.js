@@ -11,7 +11,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   //Login Lambda Function URL
-  const functionURL = 'https://7ejcwm5a64gmpnju5acstkbury0bcrak.lambda-url.us-east-1.on.aws/'; 
+  const functionURL = 'https://us-central1-serverless-441520.cloudfunctions.net/node_login'; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();

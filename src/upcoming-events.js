@@ -8,7 +8,7 @@ const UpcomingEvents = () => {
   const [error, setError] = useState('');
 
   //Lambda Function URL
-  const functionURL = 'https://qkb5pm7evvuwfjl2txtb5jsyw40nwqxi.lambda-url.us-east-1.on.aws/';
+  const functionURL = 'https://us-central1-serverless-441520.cloudfunctions.net/event';
 
   const fetchEvents = async () => {
     try {

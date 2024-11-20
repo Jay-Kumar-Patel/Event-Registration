@@ -14,11 +14,11 @@ const EventRegistration = (props) => {
   const email = localStorage.getItem('email');
 
   const stateLocation = useLocation();
-  const { eventId, name, date, description, location } = stateLocation.state || {};
+  const { eventId, title, date, description, location } = stateLocation.state || {};
 
   //Lambda Function URL
-  const photoUploadURL = 'https://wzsqukxjmexmxye2zey7fs7d6e0nzeny.lambda-url.us-east-1.on.aws/';
-  const registrationURL = 'https://h4djbsk5sjsfkazoop2m6ydqji0guiuv.lambda-url.us-east-1.on.aws/';
+  const photoUploadURL = 'https://us-central1-serverless-441520.cloudfunctions.net/profile';
+  const registrationURL = 'https://us-central1-serverless-441520.cloudfunctions.net/registration';
 
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
@@ -61,6 +61,10 @@ const EventRegistration = (props) => {
           mobile,
           email,
           eventId,
+          title,
+          description,
+          location,
+          date,
           profilePhoto: photoUrl,
         }),
       });
@@ -110,7 +114,7 @@ const EventRegistration = (props) => {
   return (
     <div className="registration-container">
       <h1>Register for Event</h1>
-      <h2>{name}</h2>
+      <h2>{title}</h2>
       <p><strong>Date:</strong> {date}</p>
       <p><strong>Description:</strong> {description}</p>
       <p><strong>Location:</strong> {location}</p>
